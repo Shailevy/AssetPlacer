@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="do_once">true</bool>
+    <string name="target_sd_direcotry">Pictures</string>
+</resources>
