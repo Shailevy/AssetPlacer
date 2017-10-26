@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 
 /**
@@ -15,18 +16,20 @@ public class BootReciver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+	// Log.d("SHAI", "boot recived");
         if (context.getResources().getBoolean(R.bool.do_once)) {
             //check if done already
             if (!PreferenceManager.getDefaultSharedPreferences(context).getBoolean(PREF_KEY_BOOL_WAS_DONE, false)) {
+		// Log.d("SHAI", "running service");
                 runService(context);
-            }
+            } 
         } else {
             runService(context);
         }
     }
 
     private void runService(Context context) {
-        Intent serviceIntent = new Intent(context, ServiceActivity.class);
+        Intent serviceIntent = new Intent(context, UnzipService.class);
         context.startService(serviceIntent);
     }
 }
