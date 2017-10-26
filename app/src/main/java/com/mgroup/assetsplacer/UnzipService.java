@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Environment;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
 
 import java.io.File;
 import java.io.InputStream;
@@ -21,14 +20,13 @@ public class UnzipService extends IntentService {
         super("Unzipper");
     }
 
-    @Nullable
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
 
     @Override
-    protected void onHandleIntent(@Nullable Intent intent) {
+    protected void onHandleIntent(Intent intent) {
         //TODO: get the target dir from the assets
         File mSDPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 

@@ -19,7 +19,7 @@ public class ServiceActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "UnZipper started");
-        boolean mUnzipAlways = getResources().getBoolean(R.bool.unzip_always);
+//        boolean mUnzipAlways = getResources().getBoolean(R.bool.unzip_always);
         startUnzipAndFinish();
     }
 
